@@ -323,7 +323,7 @@ export default function Join() {
             <h4 className="text-slate-600 font-normal">
               Not a SPN DAO member yet?
             </h4>
-            <div className="w-stretch m-5 md:mx-28 md:my-12 h-fit py-6 px-4 md:p-10 hero">
+            <div className="w-stretch max-w-6xl m-5 md:mx-28 xl:mx-auto md:my-12 h-fit py-6 px-4 md:p-10 hero">
               <h1 className="text-xl md:text-3xl">
                 <span className="text-2xl md:text-4xl">Join the party 🥳</span>{" "}
                 <br></br>for true ownership and monetization of your data

@@ -8,7 +8,7 @@ export const JoinSubText: FC<{ children: ReactNode; amber?: boolean }> = ({
   return (
     <div
       className={classNames(
-        "w-3/4 md:w-1/2 m-auto text-xs md:text-lg rounded-xl p-2 mt-4",
+        "w-3/4 md:w-1/2 max-w-fit m-auto text-xs md:text-lg rounded-xl p-2 mt-4",
         {
           "border border-amber-600 bg-red-50 text-amber-600": amber,
           "text-zinc-600": !amber

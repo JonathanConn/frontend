@@ -76,7 +76,7 @@ export default function Home() {
             DAO Admin
           </button>
         </div>
-        <div className="w-stretch my-12 mx-6 sm:mx-14 md:mx-28 min-h-80 hero pb-8">
+        <div className="w-stretch max-w-6xl xl:mx-auto my-12 mx-6 sm:mx-14 md:mx-28 min-h-80 hero pb-8">
           <div className="flex flex-row flex-wrap justify-around mb-10">
             <HeroSection
               title="Control Your Data"
