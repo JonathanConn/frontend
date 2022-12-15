@@ -3,6 +3,7 @@ import { IoIosCheckmark } from "react-icons/io"
 import { useContainerDimensions } from "../../../hooks/useContainerDimensions"
 import { VoteData } from "../dummydata"
 import Button from "../../Button"
+import { useRouter } from "next/router"
 
 export default function Proposals({
   voteData,
@@ -11,16 +12,22 @@ export default function Proposals({
   voteData: VoteData[]
   onProposalClick
 }) {
+  const router = useRouter();
   const [voteContainer, setVoteContainer] = useState<HTMLDivElement | null>()
   const { width: containerWidth } = useContainerDimensions(
     voteContainer as HTMLDivElement
   )
+
+  function addProposal(){
+    router.push("/dashboard/addProposal");
+  } 
 
   return (
     <>
       <h2 className="text-left text-2xl font-normal">Proposals</h2>
       <Button
           addClassName="mr-2 whitespace-nowrap"
+          onClick={addProposal}
         >
           New Proposal
         </Button>
