@@ -1,23 +1,29 @@
-import React, { Dispatch, useState } from "react";
-import { IoIosCheckmark } from "react-icons/io";
-import { useContainerDimensions } from "../../../hooks/useContainerDimensions";
-import { VoteData } from "../dummydata";
+import React, { Dispatch, useState } from "react"
+import { IoIosCheckmark } from "react-icons/io"
+import { useContainerDimensions } from "../../../hooks/useContainerDimensions"
+import { VoteData } from "../dummydata"
+import Button from "../../Button"
 
 export default function Proposals({
   voteData,
   onProposalClick,
 }: {
-  voteData: VoteData[];
-  onProposalClick: any;
+  voteData: VoteData[]
+  onProposalClick
 }) {
-  const [voteContainer, setVoteContainer] = useState<HTMLDivElement | null>();
+  const [voteContainer, setVoteContainer] = useState<HTMLDivElement | null>()
   const { width: containerWidth } = useContainerDimensions(
     voteContainer as HTMLDivElement
-  );
+  )
 
   return (
     <>
       <h2 className="text-left text-2xl font-normal">Proposals</h2>
+      <Button
+          addClassName="mr-2 whitespace-nowrap"
+        >
+          New Proposal
+        </Button>
 
       <div
         ref={(ref) => setVoteContainer(ref)}
@@ -27,13 +33,11 @@ export default function Proposals({
           const totalVotes = vote.options.reduce(
             (total, o) => total + o.voteCount,
             0
-          );
+          )
 
-          const maxVoteCount = Math.max(
-            ...vote.options.map((o) => o.voteCount)
-          );
+          const maxVoteCount = Math.max(...vote.options.map((o) => o.voteCount))
 
-          const widthPerVote = containerWidth / totalVotes;
+          const widthPerVote = containerWidth / totalVotes
 
           return (
             <button
@@ -77,13 +81,13 @@ export default function Proposals({
                         </span>
                       </div>
                     </span>
-                  );
+                  )
                 })}
               </div>
             </button>
-          );
+          )
         })}
       </div>
     </>
-  );
+  )
 }
